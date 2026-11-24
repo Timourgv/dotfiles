@@ -1,0 +1,25 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2026-11-24T09:26:55+01:00",
+            "Manifests": 1719
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2026-11-24T09:27:53+01:00",
+            "Manifests": 2478
+        }
+    ],
+    "apps": [
+        {
+            "Name": "scoop-search",
+            "Version": "2.1.0",
+            "Source": "main",
+            "Updated": "2025-12-05T01:41:44.8162407+01:00",
+            "Info": ""
+        }
+    ]
+}

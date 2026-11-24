@@ -1,0 +1,98 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "os": "#ACB0BE",
+    "closer": "p:os",
+    "pink": "#F5BDE6",
+    "lavender": "#B7BDF8",
+    "blue": "#8AADF4",
+    "peach": "#F5A97F",
+    "yellow": "#EED49F",
+    "red": "#ED8796",
+    "green": "#A6DA95"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "root",
+          "style": "plain",
+          "foreground": "p:yellow",
+          "template": "\uf09c "
+        },
+        {
+          "type": "os",
+          "style": "plain",
+          "foreground": "p:os",
+          "template": "{{.Icon}} "
+        },
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:blue",
+          "template": "{{ .UserName }}@{{ .HostName }} "
+        },
+       {
+          "type": "envvar",
+          "style": "plain",
+          "foreground": "p:peach",
+          "properties": {
+            "var_name": "PS_LOAD_TIME"
+          },
+          "template": "🚀{{ .Var }} "
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:pink",
+          "properties": {
+            "folder_icon": "..\ue5fe..",
+            "home_icon": "~",
+            "style": "agnoster_short"
+          },
+          "template": "{{ .Path }} "
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:lavender",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:peach{{ end }}",
+            "{{ if .Working.Untracked }}p:red{{ end }}"
+          ],
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true
+          },
+          "template": "{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf040 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \uf044 {{ .Staging.String }}{{ end }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "p:peach",
+          "template": "⚡{{ .FormattedMs }} ",
+          "properties": {
+            "min_execution_time": 2000,
+            "style": "round"
+          }
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "p:closer",
+          "foreground_templates": [
+            "{{ if or (gt .Code 0) .Error }}p:red{{ end }}"
+          ],
+          "template": "\uf105",
+          "properties": {
+            "always_enabled": true
+          }
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 4
+}
