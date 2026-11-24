@@ -1,6 +1,4 @@
 # dotfiles
-You know what's for, or you don't.
-
 My Windows machine backup: PowerShell 7 profile plus package-manager exports.
 
 ## Contents
